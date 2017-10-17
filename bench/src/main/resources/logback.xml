@@ -1,0 +1,21 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Off these ones as they are annoying, and anyway we manage configuration ourselves -->
+    <logger name="loci" level="ERROR" />
+    <logger name="org.irods" level="ERROR"/>
+    <logger name="eu.bioemergences.utils.irods" level="DEBUG"/>
+
+    <root level="debug">
+        <!--<appender-ref ref="ASYNCFILE" />-->
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
